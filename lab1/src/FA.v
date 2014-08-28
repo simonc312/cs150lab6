@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // UC Berkeley CS150
-// Lab 0, Spring 2013
+// Lab 1, Fall 2014
 // Module: FA.v
 // Desc: 1-bit Full Adder
 //       You may only use structural verilog in this module.       

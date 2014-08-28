@@ -1,5 +1,5 @@
 // UC Berkeley CS150
-// Lab 0, Spring 2013
+// Lab 1, Fall 2014
 // Module: BehavioralAdder.v
 // Desc: Parametrized behavioral adder
 
