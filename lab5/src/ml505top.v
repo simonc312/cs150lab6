@@ -1,5 +1,5 @@
 // UC Berkeley CS150
-// Lab 4, Fall 2014
+// Lab 5, Fall 2014
 
 module ml505top (
     input  [5:0] GPIO_DIP,
@@ -30,7 +30,7 @@ module ml505top (
     wire [31:0] accum_result;
     
 
-    Lab4Datapath datapath(
+    Lab5Datapath datapath(
         .clk(clk),
         .rst(rst),
         .addr_sel(addr_sel),
@@ -40,7 +40,7 @@ module ml505top (
         .accum_result(accum_result)
     );
 
-    Lab4Control controller(
+    Lab5Control controller(
         .clk(clk),
         .rst(rst),
         .ram_zero(ram_zero),

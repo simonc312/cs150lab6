@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// Lab4Datapath
+// Lab5Datapath
 // CS 150 Spring 2013
 // Description:
 //     Datapath for a linked-list accumulator. The list begins at address 0 of 
@@ -7,7 +7,7 @@
 //     the next element, stored in sequential addresses.
 //-----------------------------------------------------------------------------
  
-module Lab4Datapath(
+module Lab5Datapath(
     input clk, rst,
     input addr_sel, wr_en,
     input [3:0] alu_op,
