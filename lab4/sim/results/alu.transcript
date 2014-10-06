@@ -1,0 +1,786 @@
+Reading /mtitcl/vsim/pref.tcl 
+
+# 10.2b
+
+proc start {m} {vsim -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip work.glbl $m}
+set MODULE ALUTestbench
+# ALUTestbench
+start $MODULE
+# vsim -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip work.glbl ALUTestbench 
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.2b May 16 2013 Linux 2.6.32-358.23.2.el6.centos.plus.x86_64
+# //
+# //  Copyright 1991-2013 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.glbl(fast)
+# Loading work.ALUTestbench(fast)
+# Loading work.ALUdec(fast)
+# Loading work.ALU(fast)
+add wave $MODULE/*
+add wave $MODULE/DUT1/*
+add wave $MODULE/DUT2/*
+run 100us
+# PASS: opcode 0110111, funct 001, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xffffde81, REFout: 0xffffde81
+# PASS: opcode 0010111, funct 101, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921513a5, REFout: 0x921513a5
+# PASS: opcode 1100011, funct 101, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921513a5, REFout: 0x921513a5
+# PASS: opcode 0000011, funct 001, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921513a5, REFout: 0x921513a5
+# PASS: opcode 0100011, funct 110, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921513a5, REFout: 0x921513a5
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921513a5, REFout: 0x921513a5
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x921556a3, REFout: 0x921556a3
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x242a6a48, REFout: 0x242a6a48
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x6deaeba5, REFout: 0x6deaeba5
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x490a9a92, REFout: 0x490a9a92
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xc90a9a92, REFout: 0xc90a9a92
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0xffffffa5, REFout: 0xffffffa5
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x92153524, B: 0xffffde81, DUTout: 0x92151400, REFout: 0x92151400
+# PASS: opcode 0110111, funct 001, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xfffff78c, REFout: 0xfffff78c
+# PASS: opcode 0010111, funct 101, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d44f79, REFout: 0xf6d44f79
+# PASS: opcode 1100011, funct 101, add_rshift_type 1
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d44f79, REFout: 0xf6d44f79
+# PASS: opcode 0000011, funct 010, add_rshift_type 1
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d44f79, REFout: 0xf6d44f79
+# PASS: opcode 0100011, funct 010, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d44f79, REFout: 0xf6d44f79
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d44f79, REFout: 0xf6d44f79
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d46061, REFout: 0xf6d46061
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0x457ed000, REFout: 0x457ed000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0x092ba061, REFout: 0x092ba061
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0x000f6d45, REFout: 0x000f6d45
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xffff6d45, REFout: 0xffff6d45
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xfffff7ed, REFout: 0xfffff7ed
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xf6d457ed, B: 0xfffff78c, DUTout: 0xf6d4578c, REFout: 0xf6d4578c
+# PASS: opcode 0110111, funct 100, add_rshift_type 1
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xffffcec5, REFout: 0xffffcec5
+# PASS: opcode 0010111, funct 101, add_rshift_type 1
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf40049ad, REFout: 0xf40049ad
+# PASS: opcode 1100011, funct 011, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf40049ad, REFout: 0xf40049ad
+# PASS: opcode 0000011, funct 000, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf40049ad, REFout: 0xf40049ad
+# PASS: opcode 0100011, funct 010, add_rshift_type 1
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf40049ad, REFout: 0xf40049ad
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf40049ad, REFout: 0xf40049ad
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf400ac23, REFout: 0xf400ac23
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0x800f5d00, REFout: 0x800f5d00
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0x0bffb42d, REFout: 0x0bffb42d
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0x07a003d7, REFout: 0x07a003d7
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xffa003d7, REFout: 0xffa003d7
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xfffffeed, REFout: 0xfffffeed
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xf4007ae8, B: 0xffffcec5, DUTout: 0xf4004ac0, REFout: 0xf4004ac0
+# PASS: opcode 0110111, funct 101, add_rshift_type 1
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xffffb813, REFout: 0xffffb813
+# PASS: opcode 0010111, funct 011, add_rshift_type 1
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb1ff6a9, REFout: 0xcb1ff6a9
+# PASS: opcode 1100011, funct 010, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb1ff6a9, REFout: 0xcb1ff6a9
+# PASS: opcode 0000011, funct 101, add_rshift_type 1
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb1ff6a9, REFout: 0xcb1ff6a9
+# PASS: opcode 0100011, funct 011, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb1ff6a9, REFout: 0xcb1ff6a9
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb1ff6a9, REFout: 0xcb1ff6a9
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb208683, REFout: 0xcb208683
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xf4b00000, REFout: 0xf4b00000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0x34df8685, REFout: 0x34df8685
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0x00001964, REFout: 0x00001964
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xfffff964, REFout: 0xfffff964
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xffffbe97, REFout: 0xffffbe97
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xcb203e96, B: 0xffffb813, DUTout: 0xcb203812, REFout: 0xcb203812
+# PASS: opcode 0110111, funct 010, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xffffcc3c, REFout: 0xffffcc3c
+# PASS: opcode 0010111, funct 001, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe572d706, REFout: 0xe572d706
+# PASS: opcode 1100011, funct 000, add_rshift_type 1
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe572d706, REFout: 0xe572d706
+# PASS: opcode 0000011, funct 011, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe572d706, REFout: 0xe572d706
+# PASS: opcode 0100011, funct 110, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe572d706, REFout: 0xe572d706
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe572d706, REFout: 0xe572d706
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe5733e8e, REFout: 0xe5733e8e
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xa0000000, REFout: 0xa0000000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0x1a8cc6f6, REFout: 0x1a8cc6f6
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0x0000000e, REFout: 0x0000000e
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xfffffffe, REFout: 0xfffffffe
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xffffcefe, REFout: 0xffffcefe
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xe5730aca, B: 0xffffcc3c, DUTout: 0xe5730808, REFout: 0xe5730808
+# PASS: opcode 0110111, funct 011, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xffffdd2a, REFout: 0xffffdd2a
+# PASS: opcode 0010111, funct 101, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde74dfe6, REFout: 0xde74dfe6
+# PASS: opcode 1100011, funct 011, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde74dfe6, REFout: 0xde74dfe6
+# PASS: opcode 0000011, funct 110, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde74dfe6, REFout: 0xde74dfe6
+# PASS: opcode 0100011, funct 001, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde74dfe6, REFout: 0xde74dfe6
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde74dfe6, REFout: 0xde74dfe6
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde752592, REFout: 0xde752592
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xd40af000, REFout: 0xd40af000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0x218adf96, REFout: 0x218adf96
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0x00379d40, REFout: 0x00379d40
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xfff79d40, REFout: 0xfff79d40
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xffffdfbe, REFout: 0xffffdfbe
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xde7502bc, B: 0xffffdd2a, DUTout: 0xde750028, REFout: 0xde750028
+# PASS: opcode 0110111, funct 111, add_rshift_type 1
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xfffffb4c, REFout: 0xfffffb4c
+# PASS: opcode 0010111, funct 000, add_rshift_type 1
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb12302ae, REFout: 0xb12302ae
+# PASS: opcode 1100011, funct 111, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb12302ae, REFout: 0xb12302ae
+# PASS: opcode 0000011, funct 011, add_rshift_type 1
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb12302ae, REFout: 0xb12302ae
+# PASS: opcode 0100011, funct 001, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb12302ae, REFout: 0xb12302ae
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb12302ae, REFout: 0xb12302ae
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb1230c16, REFout: 0xb1230c16
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0x30762000, REFout: 0x30762000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0x4edcfc2e, REFout: 0x4edcfc2e
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0x000b1230, REFout: 0x000b1230
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xfffb1230, REFout: 0xfffb1230
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xffffff6e, REFout: 0xffffff6e
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xb1230762, B: 0xfffffb4c, DUTout: 0xb1230340, REFout: 0xb1230340
+# PASS: opcode 0110111, funct 110, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xfffffc51, REFout: 0xfffffc51
+# PASS: opcode 0010111, funct 010, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfebd28, REFout: 0xebfebd28
+# PASS: opcode 1100011, funct 111, add_rshift_type 1
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfebd28, REFout: 0xebfebd28
+# PASS: opcode 0000011, funct 010, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfebd28, REFout: 0xebfebd28
+# PASS: opcode 0100011, funct 101, add_rshift_type 1
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfebd28, REFout: 0xebfebd28
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfebd28, REFout: 0xebfebd28
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfec486, REFout: 0xebfec486
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0x81ae0000, REFout: 0x81ae0000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0x14013c86, REFout: 0x14013c86
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0x000075ff, REFout: 0x000075ff
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xfffff5ff, REFout: 0xfffff5ff
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xfffffcd7, REFout: 0xfffffcd7
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xebfec0d7, B: 0xfffffc51, DUTout: 0xebfec051, REFout: 0xebfec051
+# PASS: opcode 0110111, funct 101, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0xfffff6d3, REFout: 0xfffff6d3
+# PASS: opcode 0010111, funct 011, add_rshift_type 1
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd285f2, REFout: 0x8fd285f2
+# PASS: opcode 1100011, funct 111, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd285f2, REFout: 0x8fd285f2
+# PASS: opcode 0000011, funct 000, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd285f2, REFout: 0x8fd285f2
+# PASS: opcode 0100011, funct 110, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd285f2, REFout: 0x8fd285f2
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd285f2, REFout: 0x8fd285f2
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd2984c, REFout: 0x8fd2984c
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x78f80000, REFout: 0x78f80000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x702d79cc, REFout: 0x702d79cc
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x000011fa, REFout: 0x000011fa
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0xfffff1fa, REFout: 0xfffff1fa
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0xffffffdf, REFout: 0xffffffdf
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x8fd28f1f, B: 0xfffff6d3, DUTout: 0x8fd28613, REFout: 0x8fd28613
+# PASS: opcode 0110111, funct 011, add_rshift_type 1
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xffffbc26, REFout: 0xffffbc26
+# PASS: opcode 0010111, funct 111, add_rshift_type 1
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd355620, REFout: 0xfd355620
+# PASS: opcode 1100011, funct 111, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd355620, REFout: 0xfd355620
+# PASS: opcode 0000011, funct 111, add_rshift_type 1
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd355620, REFout: 0xfd355620
+# PASS: opcode 0100011, funct 110, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd355620, REFout: 0xfd355620
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd355620, REFout: 0xfd355620
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd35ddd4, REFout: 0xfd35ddd4
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0x4d667e80, REFout: 0x4d667e80
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0x02ca25dc, REFout: 0x02ca25dc
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0x03f4d667, REFout: 0x03f4d667
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfff4d667, REFout: 0xfff4d667
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xffffbdfe, REFout: 0xffffbdfe
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xfd3599fa, B: 0xffffbc26, DUTout: 0xfd359822, REFout: 0xfd359822
+# PASS: opcode 0110111, funct 010, add_rshift_type 1
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0xffffe2ed, REFout: 0xffffe2ed
+# PASS: opcode 0010111, funct 101, add_rshift_type 1
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfa416, REFout: 0x94cfa416
+# PASS: opcode 1100011, funct 001, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfa416, REFout: 0x94cfa416
+# PASS: opcode 0000011, funct 000, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfa416, REFout: 0x94cfa416
+# PASS: opcode 0100011, funct 011, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfa416, REFout: 0x94cfa416
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfa416, REFout: 0x94cfa416
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfde3c, REFout: 0x94cfde3c
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0xf8252000, REFout: 0xf8252000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x6b3023c4, REFout: 0x6b3023c4
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x0004a67e, REFout: 0x0004a67e
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0xfffca67e, REFout: 0xfffca67e
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0xffffe3ed, REFout: 0xffffe3ed
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x94cfc129, B: 0xffffe2ed, DUTout: 0x94cfc029, REFout: 0x94cfc029
+# PASS: opcode 0110111, funct 101, add_rshift_type 1
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xffffbc9a, REFout: 0xffffbc9a
+# PASS: opcode 0010111, funct 110, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5d6a76, REFout: 0xee5d6a76
+# PASS: opcode 1100011, funct 111, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5d6a76, REFout: 0xee5d6a76
+# PASS: opcode 0000011, funct 110, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5d6a76, REFout: 0xee5d6a76
+# PASS: opcode 0100011, funct 001, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5d6a76, REFout: 0xee5d6a76
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5d6a76, REFout: 0xee5d6a76
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5df142, REFout: 0xee5df142
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0x70000000, REFout: 0x70000000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0x11a21146, REFout: 0x11a21146
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0x0000003b, REFout: 0x0000003b
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xfffffffb, REFout: 0xfffffffb
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xffffbdde, REFout: 0xffffbdde
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xee5daddc, B: 0xffffbc9a, DUTout: 0xee5dac98, REFout: 0xee5dac98
+# PASS: opcode 0110111, funct 100, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xffffdd93, REFout: 0xffffdd93
+# PASS: opcode 0010111, funct 011, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d27, REFout: 0xca749d27
+# PASS: opcode 1100011, funct 001, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d27, REFout: 0xca749d27
+# PASS: opcode 0000011, funct 110, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d27, REFout: 0xca749d27
+# PASS: opcode 0100011, funct 110, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d27, REFout: 0xca749d27
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d27, REFout: 0xca749d27
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca74e201, REFout: 0xca74e201
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xfca00000, REFout: 0xfca00000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0x358b6207, REFout: 0x358b6207
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0x0000194e, REFout: 0x0000194e
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xfffff94e, REFout: 0xfffff94e
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xffffff97, REFout: 0xffffff97
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xca74bf94, B: 0xffffdd93, DUTout: 0xca749d90, REFout: 0xca749d90
+# PASS: opcode 0110111, funct 111, add_rshift_type 1
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xffff9b04, REFout: 0xffff9b04
+# PASS: opcode 0010111, funct 100, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa306b54a, REFout: 0xa306b54a
+# PASS: opcode 1100011, funct 000, add_rshift_type 1
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa306b54a, REFout: 0xa306b54a
+# PASS: opcode 0000011, funct 111, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa306b54a, REFout: 0xa306b54a
+# PASS: opcode 0100011, funct 000, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa306b54a, REFout: 0xa306b54a
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa306b54a, REFout: 0xa306b54a
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa3077f42, REFout: 0xa3077f42
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0x3071a460, REFout: 0x3071a460
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0x5cf88142, REFout: 0x5cf88142
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0x0a3071a4, REFout: 0x0a3071a4
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xfa3071a4, REFout: 0xfa3071a4
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xffff9b46, REFout: 0xffff9b46
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xa3071a46, B: 0xffff9b04, DUTout: 0xa3071a04, REFout: 0xa3071a04
+# PASS: opcode 0110111, funct 100, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xffff8729, REFout: 0xffff8729
+# PASS: opcode 0010111, funct 010, add_rshift_type 1
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea72e26, REFout: 0xfea72e26
+# PASS: opcode 1100011, funct 110, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea72e26, REFout: 0xfea72e26
+# PASS: opcode 0000011, funct 011, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea72e26, REFout: 0xfea72e26
+# PASS: opcode 0100011, funct 110, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea72e26, REFout: 0xfea72e26
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea72e26, REFout: 0xfea72e26
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea81fd4, REFout: 0xfea81fd4
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0x4f4dfa00, REFout: 0x4f4dfa00
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0x015821d4, REFout: 0x015821d4
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0x007f53d3, REFout: 0x007f53d3
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xffff53d3, REFout: 0xffff53d3
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xffffa7fd, REFout: 0xffffa7fd
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xfea7a6fd, B: 0xffff8729, DUTout: 0xfea78629, REFout: 0xfea78629
+# PASS: opcode 0110111, funct 001, add_rshift_type 1
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xfffff61a, REFout: 0xfffff61a
+# PASS: opcode 0010111, funct 110, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8dfbef, REFout: 0xea8dfbef
+# PASS: opcode 1100011, funct 110, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8dfbef, REFout: 0xea8dfbef
+# PASS: opcode 0000011, funct 101, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8dfbef, REFout: 0xea8dfbef
+# PASS: opcode 0100011, funct 110, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8dfbef, REFout: 0xea8dfbef
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8dfbef, REFout: 0xea8dfbef
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8e0fbb, REFout: 0xea8e0fbb
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0x54000000, REFout: 0x54000000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0x1571f3cf, REFout: 0x1571f3cf
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0x0000003a, REFout: 0x0000003a
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xfffffffa, REFout: 0xfffffffa
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xfffff7df, REFout: 0xfffff7df
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xea8e05d5, B: 0xfffff61a, DUTout: 0xea8e0410, REFout: 0xea8e0410
+# PASS: opcode 0110111, funct 111, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xffff80db, REFout: 0xffff80db
+# PASS: opcode 0010111, funct 010, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a1c59, REFout: 0xbf5a1c59
+# PASS: opcode 1100011, funct 111, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a1c59, REFout: 0xbf5a1c59
+# PASS: opcode 0000011, funct 110, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a1c59, REFout: 0xbf5a1c59
+# PASS: opcode 0100011, funct 101, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a1c59, REFout: 0xbf5a1c59
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a1c59, REFout: 0xbf5a1c59
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5b1aa3, REFout: 0xbf5b1aa3
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xf0000000, REFout: 0xf0000000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0x40a51ba5, REFout: 0x40a51ba5
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0x00000017, REFout: 0x00000017
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xfffffff7, REFout: 0xfffffff7
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xffff9bff, REFout: 0xffff9bff
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xbf5a9b7e, B: 0xffff80db, DUTout: 0xbf5a805a, REFout: 0xbf5a805a
+# PASS: opcode 0110111, funct 101, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0xfffff5c1, REFout: 0xfffff5c1
+# PASS: opcode 0010111, funct 011, add_rshift_type 1
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a7fea, REFout: 0x949a7fea
+# PASS: opcode 1100011, funct 100, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a7fea, REFout: 0x949a7fea
+# PASS: opcode 0000011, funct 110, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a7fea, REFout: 0x949a7fea
+# PASS: opcode 0100011, funct 001, add_rshift_type 1
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a7fea, REFout: 0x949a7fea
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a7fea, REFout: 0x949a7fea
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a9468, REFout: 0x949a9468
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x29351452, REFout: 0x29351452
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x6b657fe8, REFout: 0x6b657fe8
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x4a4d4514, REFout: 0x4a4d4514
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0xca4d4514, REFout: 0xca4d4514
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0xffffffe9, REFout: 0xffffffe9
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x949a8a29, B: 0xfffff5c1, DUTout: 0x949a8001, REFout: 0x949a8001
+# PASS: opcode 0110111, funct 111, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0xffffe6e6, REFout: 0xffffe6e6
+# PASS: opcode 0010111, funct 010, add_rshift_type 1
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870b9ff4, REFout: 0x870b9ff4
+# PASS: opcode 1100011, funct 110, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870b9ff4, REFout: 0x870b9ff4
+# PASS: opcode 0000011, funct 001, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870b9ff4, REFout: 0x870b9ff4
+# PASS: opcode 0100011, funct 010, add_rshift_type 1
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870b9ff4, REFout: 0x870b9ff4
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870b9ff4, REFout: 0x870b9ff4
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870bd228, REFout: 0x870bd228
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0xc2ee4380, REFout: 0xc2ee4380
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x78f45fe8, REFout: 0x78f45fe8
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x021c2ee4, REFout: 0x021c2ee4
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0xfe1c2ee4, REFout: 0xfe1c2ee4
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0xffffffee, REFout: 0xffffffee
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x870bb90e, B: 0xffffe6e6, DUTout: 0x870ba006, REFout: 0x870ba006
+# PASS: opcode 0110111, funct 110, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xffffaec7, REFout: 0xffffaec7
+# PASS: opcode 0010111, funct 100, add_rshift_type 1
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a07832, REFout: 0xb5a07832
+# PASS: opcode 1100011, funct 010, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a07832, REFout: 0xb5a07832
+# PASS: opcode 0000011, funct 111, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a07832, REFout: 0xb5a07832
+# PASS: opcode 0100011, funct 010, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a07832, REFout: 0xb5a07832
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a07832, REFout: 0xb5a07832
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a11aa4, REFout: 0xb5a11aa4
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xd064b580, REFout: 0xd064b580
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0x4a5f67ac, REFout: 0x4a5f67ac
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0x016b4192, REFout: 0x016b4192
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xff6b4192, REFout: 0xff6b4192
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xffffefef, REFout: 0xffffefef
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xb5a0c96b, B: 0xffffaec7, DUTout: 0xb5a08843, REFout: 0xb5a08843
+# PASS: opcode 0110111, funct 100, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0xffffdebd, REFout: 0xffffdebd
+# PASS: opcode 0010111, funct 010, add_rshift_type 1
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x9944ffef, REFout: 0x9944ffef
+# PASS: opcode 1100011, funct 001, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x9944ffef, REFout: 0x9944ffef
+# PASS: opcode 0000011, funct 011, add_rshift_type 1
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x9944ffef, REFout: 0x9944ffef
+# PASS: opcode 0100011, funct 111, add_rshift_type 1
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x9944ffef, REFout: 0x9944ffef
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x9944ffef, REFout: 0x9944ffef
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x99454275, REFout: 0x99454275
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x40000000, REFout: 0x40000000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x66baff8f, REFout: 0x66baff8f
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x00000004, REFout: 0x00000004
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0xfffffffc, REFout: 0xfffffffc
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0xffffffbf, REFout: 0xffffffbf
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x99452132, B: 0xffffdebd, DUTout: 0x99450030, REFout: 0x99450030
+# PASS: opcode 0110111, funct 111, add_rshift_type 1
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0xffffc875, REFout: 0xffffc875
+# PASS: opcode 0010111, funct 000, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60adab, REFout: 0x9b60adab
+# PASS: opcode 1100011, funct 011, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60adab, REFout: 0x9b60adab
+# PASS: opcode 0000011, funct 000, add_rshift_type 1
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60adab, REFout: 0x9b60adab
+# PASS: opcode 0100011, funct 011, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60adab, REFout: 0x9b60adab
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60adab, REFout: 0x9b60adab
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b611cc1, REFout: 0x9b611cc1
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0xa6c00000, REFout: 0xa6c00000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x649f2d43, REFout: 0x649f2d43
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x000004db, REFout: 0x000004db
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0xfffffcdb, REFout: 0xfffffcdb
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0xffffed77, REFout: 0xffffed77
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x9b60e536, B: 0xffffc875, DUTout: 0x9b60c034, REFout: 0x9b60c034
+# PASS: opcode 0110111, funct 100, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0xffff850d, REFout: 0xffff850d
+# PASS: opcode 0010111, funct 001, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c7b2b, REFout: 0x8f1c7b2b
+# PASS: opcode 1100011, funct 001, add_rshift_type 1
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c7b2b, REFout: 0x8f1c7b2b
+# PASS: opcode 0000011, funct 000, add_rshift_type 1
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c7b2b, REFout: 0x8f1c7b2b
+# PASS: opcode 0100011, funct 110, add_rshift_type 1
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c7b2b, REFout: 0x8f1c7b2b
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c7b2b, REFout: 0x8f1c7b2b
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1d7111, REFout: 0x8f1d7111
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x9ec3c000, REFout: 0x9ec3c000
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x70e37313, REFout: 0x70e37313
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x000478e7, REFout: 0x000478e7
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0xfffc78e7, REFout: 0xfffc78e7
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0xfffff71f, REFout: 0xfffff71f
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x8f1cf61e, B: 0xffff850d, DUTout: 0x8f1c840c, REFout: 0x8f1c840c
+# PASS: opcode 0110111, funct 011, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xffffe204, REFout: 0xffffe204
+# PASS: opcode 0010111, funct 010, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166dce6, REFout: 0xf166dce6
+# PASS: opcode 1100011, funct 001, add_rshift_type 1
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166dce6, REFout: 0xf166dce6
+# PASS: opcode 0000011, funct 001, add_rshift_type 1
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166dce6, REFout: 0xf166dce6
+# PASS: opcode 0100011, funct 001, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166dce6, REFout: 0xf166dce6
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166dce6, REFout: 0xf166dce6
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf16718de, REFout: 0xf16718de
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0x166fae20, REFout: 0x166fae20
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0x0e9918e6, REFout: 0x0e9918e6
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0x0f166fae, REFout: 0x0f166fae
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xff166fae, REFout: 0xff166fae
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xfffffae6, REFout: 0xfffffae6
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0xf166fae2, B: 0xffffe204, DUTout: 0xf166e200, REFout: 0xf166e200
+# PASS: opcode 0110111, funct 111, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0xfffff9a1, REFout: 0xfffff9a1
+# PASS: opcode 0010111, funct 000, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b54ec8, REFout: 0x93b54ec8
+# PASS: opcode 1100011, funct 100, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b54ec8, REFout: 0x93b54ec8
+# PASS: opcode 0000011, funct 110, add_rshift_type 1
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b54ec8, REFout: 0x93b54ec8
+# PASS: opcode 0100011, funct 101, add_rshift_type 1
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b54ec8, REFout: 0x93b54ec8
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b54ec8, REFout: 0x93b54ec8
+# PASS: opcode 0110011, funct 000, add_rshift_type 1
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b55b86, REFout: 0x93b55b86
+# PASS: opcode 0110011, funct 001, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x276aaa4e, REFout: 0x276aaa4e
+# PASS: opcode 0110011, funct 010, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 011, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x00000001, REFout: 0x00000001
+# PASS: opcode 0110011, funct 100, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x6c4aac86, REFout: 0x6c4aac86
+# PASS: opcode 0110011, funct 101, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x49daaa93, REFout: 0x49daaa93
+# PASS: opcode 0110011, funct 101, add_rshift_type 1
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0xc9daaa93, REFout: 0xc9daaa93
+# PASS: opcode 0110011, funct 110, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0xfffffda7, REFout: 0xfffffda7
+# PASS: opcode 0110011, funct 111, add_rshift_type 0
+# 	A: 0x93b55527, B: 0xfffff9a1, DUTout: 0x93b55121, REFout: 0x93b55121
+# PASS: opcode 0110011, funct 000, add_rshift_type 0
+# 	A: 0xfd504144, B: 0x5bfeca86, DUTout: 0x594f0bca, REFout: 0x594f0bca
+# PASS: opcode 0000011, funct 011, add_rshift_type 0
+# 	A: 0xfd504144, B: 0x5bfeca86, DUTout: 0x594f0bca, REFout: 0x594f0bca
+# PASS: opcode 1101111, funct 001, add_rshift_type 0
+# 	A: 0x0a79c3ab, B: 0x7279a88c, DUTout: 0x7cf36c37, REFout: 0x7cf36c37
+# 
+# 
+# ALL TESTS PASSED!

@@ -96,7 +96,7 @@ def gen_vector(op, f, a, b, opcode, funct3, funct7):
     B = b(random.randint(0, 0xffffffff))
     REFout = f(A,B)
     # Uncomment this if you want to see decimal outputs
-    # print 'Op: {0}, A: {1}, B: {2}, Out: {3}'.format(op, str(A), str(B), str(REFout))
+    print 'Op: {0}, A: {1}, B: {2}, Out: {3}'.format(op, str(A), str(B), str(REFout))
     # return ''
     return ''.join([opcode, funct3, funct7, bin(A, 32), bin(B, 32), bin(REFout, 32)])
 

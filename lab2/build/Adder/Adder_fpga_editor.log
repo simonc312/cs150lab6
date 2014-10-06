@@ -1,0 +1,86 @@
+#:C19    
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   SPARC M2.1 P.68d
+#Current Working Directory:
+#:D   /home/cc/cs150/fa14/class/cs150-df/labs/lab2/build/Adder
+#Host Name:
+#:H   c125m-3.EECS.Berkeley.EDU
+#Date/Time:
+#:T   Wed Sep 10 18:42:11 2014
+#------------------------------
+	#Reading Adder.ncd...
+	#Loading device for application Rf_Device from file '5vlx110t.nph' in environment /opt/Xilinx/14.6/ISE_DS/ISE/.
+	#   "Adder" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+	#Design creation date: 2014.09.11.01.38.10
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'Cout'
+	#3
+unselect -all
+	#4
+select comp 'Cout'
+	#comp "Cout",  site "K13",  bonded type = IOB,  pad name = IOB_X1Y181,  pin name = K13  (RPM grid X117Y181)
+	#5
+unselect -all
+	#6
+select comp 'Cout'
+	#comp "Cout",  site "K13",  bonded type = IOB,  pad name = IOB_X1Y181,  pin name = K13  (RPM grid X117Y181)
+	#7
+post block
+	#8
+unselect comp 'Cout'
+	#9
+select -k comp 'Result<0>'
+	#10
+unselect -all
+	#11
+select pin 'H23.T'
+	#site.pin = H23.T
+	#12
+unselect -all
+	#13
+select pin 'H23.T'
+	#site.pin = H23.T
+	#14
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#15
+unselect -all
+	#16
+select comp 'Result<0>'
+	#comp "Result<0>",  site "H23",  bonded type = IOB,  pad name = IOB_X1Y182,  pin name = H23  (RPM grid X117Y182)
+	#17
+unselect -all
+	#18
+select comp 'Result<0>'
+	#comp "Result<0>",  site "H23",  bonded type = IOB,  pad name = IOB_X1Y182,  pin name = H23  (RPM grid X117Y182)
+	#19
+post block
+	#20
+unselect comp 'Result<0>'
+	#21
+select -k comp 'Carry<5>'
+	#22
+unselect -all
+	#23
+select net 'B_3_IBUF'
+	#net "B_3_IBUF"
+	#24
+unselect -all
+	#25
+select comp 'Carry<5>'
+	#comp "Carry<5>",  site "SLICE_X21Y94",  type = SLICEL  (RPM grid X55Y188)
+	#26
+unselect -all
+	#27
+select comp 'Carry<5>'
+	#comp "Carry<5>",  site "SLICE_X21Y94",  type = SLICEL  (RPM grid X55Y188)
+	#28
+post block
+	#<A6LUT>=((~A4*((~A3*(A5*(A1*(A6*A2))))+(A3*((~A5*(A1*(A6*A2)))+(A5*A2)))))+(A4*((~A3*((A5*(A1*A6))+A2))+(A3*(A5+((A1*A6)+A2)))))); bel <bit[2].fa/Cout1>.

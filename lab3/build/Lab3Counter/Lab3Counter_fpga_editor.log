@@ -1,0 +1,117 @@
+#:C29    
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   SPARC M2.1 P.68d
+#Current Working Directory:
+#:D   /home/cc/cs150/fa14/class/cs150-df/labs/lab3/build/Lab3Counter
+#Host Name:
+#:H   c125m-6.EECS.Berkeley.EDU
+#Date/Time:
+#:T   Thu Sep 18 13:14:35 2014
+#------------------------------
+	#Reading Lab3Counter.ncd...
+	#Loading device for application Rf_Device from file '5vlx110t.nph' in environment /opt/Xilinx/14.6/ISE_DS/ISE/.
+	#   "Lab3Counter" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+	#Design creation date: 2014.09.18.20.10.41
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'Decrement'
+	#3
+unselect -all
+	#4
+select -k comp 'Decrement'
+	#5
+unselect -all
+	#6
+select comp 'Decrement'
+	#comp "Decrement",  site "L14",  bonded type = IOB,  pad name = IOB_X1Y189,  pin name = L14  (RPM grid X117Y189)
+	#7
+unselect -all
+	#8
+select wire 'IOBOUTPUT(-15424,48036)'
+	#node = IOBOUTPUT(-15424,48036)
+	#9
+unselect -all
+	#10
+select wire 'IOBOUTPUT(-15424,48036)'
+	#node = IOBOUTPUT(-15424,48036)
+	#11
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#12
+unselect -all
+	#13
+select site 'OLOGIC_X1Y189'
+	#site "OLOGIC_X1Y189",  type = OLOGIC  (RPM grid X119Y189)
+	#14
+unselect -all
+	#15
+select net 'Decrement_IBUF'
+	#net "Decrement_IBUF"
+	#16
+unselect -all
+	#17
+select wire 'IOBINPUT(-15504,48012)'
+	#node = IOBINPUT(-15504,48012)
+	#18
+unselect -all
+	#19
+select wire 'IOBINPUT(-15504,48012)'
+	#node = IOBINPUT(-15504,48012)
+	#20
+post block
+	#ERROR:FPGAEditor:79 - The "post block" command without any other arguments cannot
+	#be performed unless the selection contains only a single site
+	#or single component.  Change the selection and try again.
+	#21
+unselect -all
+	#22
+select site 'IODELAY_X1Y189'
+	#site "IODELAY_X1Y189",  type = IODELAY  (RPM grid X122Y189)
+	#23
+unselect -all
+	#24
+select net 'Decrement_IBUF'
+	#net "Decrement_IBUF"
+	#25
+unselect -all
+	#26
+select site 'ILOGIC_X1Y189'
+	#site "ILOGIC_X1Y189",  type = ILOGIC  (RPM grid X118Y189)
+	#27
+unselect -all
+	#28
+select comp 'decrement_count<1>'
+	#comp "decrement_count<1>",  site "SLICE_X46Y93",  type = SLICEL  (RPM grid X113Y186)
+	#29
+unselect -all
+	#30
+select comp 'current_count<0>'
+	#comp "current_count<0>",  site "SLICE_X47Y93",  type = SLICEL  (RPM grid X115Y186)
+	#31
+unselect -all
+	#32
+select comp 'current_count<0>'
+	#comp "current_count<0>",  site "SLICE_X47Y93",  type = SLICEL  (RPM grid X115Y186)
+	#33
+unselect -all
+	#34
+select comp 'current_count<0>'
+	#comp "current_count<0>",  site "SLICE_X47Y93",  type = SLICEL  (RPM grid X115Y186)
+	#35
+unselect -all
+	#36
+select comp 'current_count<0>'
+	#comp "current_count<0>",  site "SLICE_X47Y93",  type = SLICEL  (RPM grid X115Y186)
+	#37
+unselect -all
+	#38
+select comp 'current_count<0>'
+	#comp "current_count<0>",  site "SLICE_X47Y93",  type = SLICEL  (RPM grid X115Y186)
+	#39
+post block

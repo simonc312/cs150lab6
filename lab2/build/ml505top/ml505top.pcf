@@ -1,0 +1,26 @@
+//! **************************************************************************
+// Written by: Map P.68d on Wed Sep 10 18:31:32 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "GPIO_COMPSW<4>" LOCATE = SITE "AJ7" LEVEL 1;
+COMP "GPIO_LED<0>" LOCATE = SITE "H18" LEVEL 1;
+COMP "GPIO_LED<1>" LOCATE = SITE "L18" LEVEL 1;
+COMP "GPIO_LED<2>" LOCATE = SITE "G15" LEVEL 1;
+COMP "GPIO_LED<3>" LOCATE = SITE "AD26" LEVEL 1;
+COMP "GPIO_LED<4>" LOCATE = SITE "G16" LEVEL 1;
+COMP "GPIO_LED<5>" LOCATE = SITE "AD25" LEVEL 1;
+COMP "GPIO_LED<6>" LOCATE = SITE "AD24" LEVEL 1;
+COMP "GPIO_LED<7>" LOCATE = SITE "AE24" LEVEL 1;
+COMP "CLK_33MHZ_FPGA" LOCATE = SITE "AH17" LEVEL 1;
+COMP "GPIO_COMPSW<0>" LOCATE = SITE "AJ6" LEVEL 1;
+COMP "GPIO_COMPSW<1>" LOCATE = SITE "AK7" LEVEL 1;
+COMP "GPIO_COMPSW<2>" LOCATE = SITE "U8" LEVEL 1;
+COMP "GPIO_COMPSW<3>" LOCATE = SITE "V8" LEVEL 1;
+TIMEGRP CLK_33MHZ_FPGA = BEL "ClockBuf" BEL "Count_0" BEL "Count_1" BEL
+        "Count_2" BEL "Count_3" BEL "Count_4" BEL "Count_5" BEL "Count_6" BEL
+        "Count_7" BEL "Count_8" BEL "Count_9" BEL "Count_10" BEL "Count_11"
+        BEL "Count_12" BEL "Count_13" BEL "Count_14" BEL "Count_15";
+TS_USER_CLK = PERIOD TIMEGRP "CLK_33MHZ_FPGA" 30.3 ns HIGH 50%;
+SCHEMATIC END;
+

@@ -1,0 +1,141 @@
+m255
+K4
+z2
+13
+cModel Technology
+Z0 d/home/cc/cs150/fa14/class/cs150-df/labs/lab4/sim/build
+!i10d 8192
+!i10e 25
+!i10f 100
+T_opt
+Z1 !s110 1412219924
+VWK?2b842X:IRZ0g24iGWC2
+Z2 04 4 4 work glbl fast 0
+04 12 4 work ALUTestbench fast 0
+=1-0023246079fd-542cc414-a2465-3cb4
+Z3 o-quiet -auto_acc_if_foreign -work work -L unisims_ver -L unimacro_ver -L xilinxcorelib_ver -L secureip
+n@_opt
+Z4 OL;O;10.2b;57
+Z5 d/home/cc/cs150/fa14/class/cs150-df/labs/lab4/sim/build
+T_opt1
+!s110 1412219926
+V:NkCGTbmI>lR]EkFMI@;F0
+R2
+04 22 4 work ALUTestVectorTestbench fast 0
+=1-0023246079fd-542cc416-2c483-3cdb
+R3
+n@_opt1
+R4
+vALU
+R1
+IW9kVO4Pj8benYRDX4BR]E3
+Z6 V`JN@9S9cnhjKRR_L]QIcM3
+R5
+w1412219633
+8../../src/ALU.v
+F../../src/ALU.v
+L0 16
+Z7 OL;L;10.2b;57
+r1
+31
+Z8 !s108 1412219924.084126
+Z9 !s107 ../../src/ALUop.vh|../../src/Opcode.vh|../../src/ALU.v|../../src/ALUdec.v|../../src/ALUTestbench.v|../../src/ALUTestVectorTestbench.v|
+Z10 !s90 +acc|-source|-nocovercells|+incdir+../../src|-L|mtiAvm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|../../src/ALUTestVectorTestbench.v|../../src/ALUTestbench.v|../../src/ALUdec.v|../../src/ALU.v|
+Z11 !s102 -nocovercells
+Z12 o+acc -source -nocovercells -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z13 !s92 +acc -source -nocovercells +incdir+../../src -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+n@a@l@u
+!s100 ne<mmc<S1goG5hD_AR<Ok0
+!i10b 1
+!s85 0
+!i111 0
+vALUdec
+R1
+I1Jd;8:`b6<=UdofIa_a@K0
+R6
+R5
+w1412111388
+8../../src/ALUdec.v
+F../../src/ALUdec.v
+L0 14
+R7
+r1
+31
+R8
+R9
+R10
+R11
+R12
+R13
+n@a@l@udec
+!s100 eVn:hVP_`_EZ@5gdRM1FH3
+!i10b 1
+!s85 0
+!i111 0
+vALUTestbench
+R1
+I]M9@i`DQEz?3BbiW1kzMU1
+R6
+R5
+w1412219141
+8../../src/ALUTestbench.v
+F../../src/ALUTestbench.v
+L0 15
+R7
+r1
+31
+R8
+R9
+R10
+R11
+R12
+R13
+n@a@l@u@testbench
+!s100 GOI1o7fe3RHF4oY]BOZ812
+!i10b 1
+!s85 0
+!i111 0
+vALUTestVectorTestbench
+R1
+IX8Vi`ga>FcQ2e=NI3d<Qa2
+R6
+R5
+w1412218934
+8../../src/ALUTestVectorTestbench.v
+F../../src/ALUTestVectorTestbench.v
+L0 11
+R7
+r1
+31
+R8
+R9
+R10
+R11
+R12
+R13
+n@a@l@u@test@vector@testbench
+!s100 fMSVQdg]Q][LFY:z3fLiz3
+!i10b 1
+!s85 0
+!i111 0
+vglbl
+InAlf`D:9V>aSIi5SboFW?0
+R6
+R5
+w1370717315
+8/opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/glbl.v
+F/opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/glbl.v
+L0 5
+R7
+r1
+31
+R11
+R12
+!s110 1412219923
+!s100 V<`KW`8LXe32mQ2Gdj1MB2
+!s108 1412219923.871284
+!s107 /opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/glbl.v|
+!s90 +acc|-source|-nocovercells|-L|mtiAvm|-L|mtiOvm|-L|mtiUvm|-L|mtiUPF|/opt/Xilinx/14.6/ISE_DS/ISE/verilog/src/glbl.v|
+!i10b 1
+!s85 0
+!i111 0

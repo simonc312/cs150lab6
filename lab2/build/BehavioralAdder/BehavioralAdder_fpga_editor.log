@@ -1,0 +1,65 @@
+#:C19    
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   SPARC M2.1 P.68d
+#Current Working Directory:
+#:D   /home/cc/cs150/fa14/class/cs150-df/labs/lab2/build/BehavioralAdder
+#Host Name:
+#:H   c125m-3.EECS.Berkeley.EDU
+#Date/Time:
+#:T   Wed Sep 10 19:10:18 2014
+#------------------------------
+	#Reading BehavioralAdder.ncd...
+	#Loading device for application Rf_Device from file '5vlx110t.nph' in environment /opt/Xilinx/14.6/ISE_DS/ISE/.
+	#   "BehavioralAdder" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+	#Design creation date: 2014.09.11.02.07.31
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'Result<7>'
+	#3
+unselect -all
+	#4
+select comp 'Result<7>'
+	#comp "Result<7>",  site "T29",  bonded type = IOB,  pad name = IOB_X0Y208,  pin name = T29  (RPM grid X1Y208)
+	#5
+unselect -all
+	#6
+select comp 'Result<7>'
+	#comp "Result<7>",  site "T29",  bonded type = IOB,  pad name = IOB_X0Y208,  pin name = T29  (RPM grid X1Y208)
+	#7
+post block
+	#8
+unselect comp 'Result<7>'
+	#9
+select -k comp 'Result_15_OBUF'
+	#10
+unselect -all
+	#11
+select comp 'Result<7>'
+	#comp "Result<7>",  site "T29",  bonded type = IOB,  pad name = IOB_X0Y208,  pin name = T29  (RPM grid X1Y208)
+	#12
+unselect -all
+	#13
+select comp 'Result<7>'
+	#comp "Result<7>",  site "T29",  bonded type = IOB,  pad name = IOB_X0Y208,  pin name = T29  (RPM grid X1Y208)
+	#14
+post block
+	#15
+unselect comp 'Result<7>'
+	#16
+select -k comp 'Result_15_OBUF'
+	#17
+unselect -all
+	#18
+select rpm 'Shape_0'
+	#RPM Shape_0, type CARRY
+	#19
+unselect -all
+	#20
+select comp 'Result_15_OBUF'
+	#comp "Result_15_OBUF",  site "SLICE_X0Y109",  type = SLICEL  (RPM grid X9Y218)
+	#21
+post block

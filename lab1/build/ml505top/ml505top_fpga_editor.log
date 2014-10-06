@@ -1,0 +1,33 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   SPARC M2.1 P.68d
+#Current Working Directory:
+#:D   /home/cc/cs150/fa14/class/cs150-df/labs/lab1/build/ml505top
+#Host Name:
+#:H   c125m-3.EECS.Berkeley.EDU
+#Date/Time:
+#:T   Wed Sep 10 18:15:21 2014
+#------------------------------
+	#Reading ml505top.ncd...
+	#Loading device for application Rf_Device from file '5vlx110t.nph' in environment /opt/Xilinx/14.6/ISE_DS/ISE/.
+	#   "ml505top" is an NCD, version 3.2, device xc5vlx110t, package ff1136, speed -1
+	#Design creation date: 2014.09.11.00.44.33
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+select -k comp 'GPIO_LED_0_OBUF'
+	#3
+unselect -all
+	#4
+select comp 'GPIO_LED_0_OBUF'
+	#comp "GPIO_LED_0_OBUF",  site "SLICE_X3Y100",  type = SLICEL  (RPM grid X15Y200)
+	#5
+unselect -all
+	#6
+select comp 'GPIO_LED_0_OBUF'
+	#comp "GPIO_LED_0_OBUF",  site "SLICE_X3Y100",  type = SLICEL  (RPM grid X15Y200)
+	#7
+post block

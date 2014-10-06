@@ -48,7 +48,7 @@
 //
 //					Note: the output pulses from RotaryEncoder will arrive too frequently.
 //							RotaryEncoder will produce 4 pulses per click of the wheel.
-//							Yoi will mask this by maintaining 6 bits to represent Count.
+//							You will mask this by maintaining 6 bits to represent Count.
 //							You will expose the top 4 bits.
 //	Params:		This module is not parameterized.
 //	Inputs:			Increment:		Raw 'A' input from a rotary encoder.
@@ -57,7 +57,7 @@
 //									Note: Remember to only increment the count every 4th pulse.
 //
 //	Author:		<a href="http://www.gdgib.com/">Greg Gibeling</a>
-//				YOUR NAME GOES HERE
+//				Shiwei Chen
 //	Version:	$Revision: 26904 $
 //------------------------------------------------------------------------------
 module	Lab3Counter(
@@ -111,15 +111,36 @@ module	Lab3Counter(
 	//	Wire Declarations
 	//--------------------------------------------------------------------------
 	
-	//place wire declarations here
-	
+	reg [5:0] increment_count; //6 bit wide to count up to 16 by 4s
+	reg [5:0] decrement_count;
+	reg [3:0] current_count;
 	//--------------------------------------------------------------------------
 	
 	//--------------------------------------------------------------------------
 	//	Logic
 	//--------------------------------------------------------------------------
+	always @(posedge Clock) begin
+		if(Reset) begin
+			increment_count <= 6'b0; decrement_count <= 6'b0; current_count <= 4'b0;
+		end
+		else if(Increment) begin 
+			increment_count <= increment_count + 6'd1;
+
+			if(increment_count % 4 == 0)begin 
+				current_count <= current_count + 4'd1;
+			end
+		end
+		else if(Decrement) begin
+			decrement_count <= decrement_count + 6'd1;
+
+			if(decrement_count % 4 == 0)begin 
+				current_count <= current_count - 4'd1;
+			end
+		end
+	end
 	
-	//place your logic here
+	assign Count = current_count;
+	
 
 	//--------------------------------------------------------------------------
 endmodule

@@ -1,0 +1,8 @@
+Release 14.6 Drc P.68d (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Sep 18 13:11:16 2014
+
+drc -z Lab3Counter.ncd Lab3Counter.pcf
+
+DRC detected 0 errors and 0 warnings.

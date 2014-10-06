@@ -41,6 +41,9 @@ module ALUTestbench();
     wire signed [31:0] B_signed;
     assign B_signed = $signed(B);
 
+	wire signed [31:0] A_signed;
+    assign A_signed = $signed(A);
+
     wire signed_comp, unsigned_comp;
     assign signed_comp = ($signed(A) < $signed(B));
     assign unsigned_comp = A < B;
@@ -132,10 +135,103 @@ module ALUTestbench();
             #1;
             checkOutput(opcode, funct, add_rshift_type);
 
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b000;
+            add_rshift_type = 1'b0;
+            REFout = A + B;
+            #1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b000;
+            add_rshift_type = 1'b1;
+            REFout = A - B;
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b001;
+            add_rshift_type = 1'b0;
+            REFout = A << B[4:0]; //SLL
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b010;
+            add_rshift_type = 1'b0;
+            REFout = signed_comp; //SLT
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+		
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b011;
+            add_rshift_type = 1'b0;
+            REFout = unsigned_comp; //SLTU
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b100;
+            add_rshift_type = 1'b0;
+            REFout = A^B; //XOR
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b101;
+            add_rshift_type = 1'b0;
+            REFout = A>>B[4:0]; //SRL
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b101;
+            add_rshift_type = 1'b1;
+            REFout = A_signed>>>B[4:0]; //SRA
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b110;
+            add_rshift_type = 1'b0;
+            REFout = A|B; //OR
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+			opcode = `OPC_ARI_RTYPE;
+            funct = 3'b111;
+            add_rshift_type = 1'b0;
+            REFout = A&B; //AND
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
         end
         ///////////////////////////////
         // Hard coded tests go here
         ///////////////////////////////
+
+		opcode = `OPC_ARI_RTYPE;
+            funct = 3'b000;
+            add_rshift_type = 1'b0;
+			A = 32'hfd504144; B = 32'h5bfeca86;
+            REFout = 32'h594f0bca; //AND OVERFLOW
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+		opcode = `OPC_LOAD;
+            funct = 3'b011;
+            add_rshift_type = 1'b0;
+			A = 32'hfd504144; B = 32'h5bfeca86;
+            REFout = 32'h594f0bca; //LOAD OVERFLOW
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
+
+		opcode = `OPC_JAL;
+			funct = 3'b001;
+            add_rshift_type = 1'b0;
+			A = 32'h0a79c3ab; B = 32'h7279a88c;
+            REFout = 32'h7cf36c37; //JAL
+			#1;
+            checkOutput(opcode, funct, add_rshift_type);
 
         $display("\n\nALL TESTS PASSED!");
         $finish();

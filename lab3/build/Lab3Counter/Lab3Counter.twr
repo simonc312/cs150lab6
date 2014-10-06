@@ -1,0 +1,74 @@
+--------------------------------------------------------------------------------
+Release 14.6 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 3 -s 1 -n 10 -fastpaths
+-xml Lab3Counter.twx Lab3Counter.ncd -o Lab3Counter.twr Lab3Counter.pcf
+
+Design file:              Lab3Counter.ncd
+Physical constraint file: Lab3Counter.pcf
+Device,package,speed:     xc5vlx110t,ff1136,-1 (PRODUCTION 1.73 2013-06-08, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock Clock
+------------+------------+------------+------------------+--------+
+            |Max Setup to|Max Hold to |                  | Clock  |
+Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+------------+------------+------------+------------------+--------+
+Decrement   |    0.511(R)|    1.983(R)|Clock_BUFGP       |   0.000|
+Increment   |    0.275(R)|    2.647(R)|Clock_BUFGP       |   0.000|
+Reset       |   -0.098(R)|    2.368(R)|Clock_BUFGP       |   0.000|
+------------+------------+------------+------------------+--------+
+
+Clock Clock to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+Count<0>    |    8.332(R)|Clock_BUFGP       |   0.000|
+Count<1>    |    8.490(R)|Clock_BUFGP       |   0.000|
+Count<2>    |    8.483(R)|Clock_BUFGP       |   0.000|
+Count<3>    |    8.517(R)|Clock_BUFGP       |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock Clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock          |    1.735|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Sep 18 13:11:40 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 596 MB
+
+
+

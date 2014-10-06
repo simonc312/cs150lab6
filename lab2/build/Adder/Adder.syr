@@ -1,0 +1,348 @@
+Release 14.6 - xst P.68d (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Adder.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Adder"
+Output Format                      : NGC
+Target Device                      : xc5vlx110t-1-ff1136
+
+---- Source Options
+Top Module Name                    : Adder
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Use DSP Block                      : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Off
+Reduce Control Sets                : Off
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../src/Adder.v" in library work
+Compiling verilog file "../../src/BehavioralAdder.v" in library work
+Module <Adder> compiled
+Compiling verilog file "../../src/ml505top.v" in library work
+Module <BehavioralAdder> compiled
+Compiling verilog file "../../src/FA.v" in library work
+Module <ml505top> compiled
+Module <FA> compiled
+No errors in compilation
+Analysis of file <"Adder.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <Adder> in library <work> with parameters.
+	Width = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <FA> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <Adder>.
+	Width = 32'sb00000000000000000000000000100000
+Module <Adder> is correct for synthesis.
+ 
+Analyzing module <FA> in library <work>.
+Module <FA> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FA>.
+    Related source file is "../../src/FA.v".
+    Found 1-bit xor2 for signal <Sum>.
+    Found 1-bit xor2 for signal <ab_xor>.
+Unit <FA> synthesized.
+
+
+Synthesizing Unit <Adder>.
+    Related source file is "../../src/Adder.v".
+Unit <Adder> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Xors                                                 : 64
+ 1-bit xor2                                            : 64
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Xors                                                 : 64
+ 1-bit xor2                                            : 64
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Adder> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Adder, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : Adder.ngr
+Top Level Output File Name         : Adder
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 97
+
+Cell Usage :
+# BELS                             : 48
+#      LUT2                        : 1
+#      LUT3                        : 15
+#      LUT4                        : 1
+#      LUT5                        : 29
+#      LUT6                        : 2
+# IO Buffers                       : 97
+#      IBUF                        : 64
+#      OBUF                        : 33
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx110tff1136-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   48  out of  69120     0%  
+    Number used as Logic:                48  out of  69120     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     48
+   Number with an unused Flip Flop:      48  out of     48   100%  
+   Number with an unused LUT:             0  out of     48     0%  
+   Number of fully used LUT-FF pairs:     0  out of     48     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          97
+ Number of bonded IOBs:                  97  out of    640    15%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 14.983ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1120 / 33
+-------------------------------------------------------------------------
+Delay:               14.983ns (Levels of Logic = 18)
+  Source:            A<2> (PAD)
+  Destination:       Cout (PAD)
+
+  Data Path: A<2> to Cout
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.818   1.074  A_2_IBUF (A_2_IBUF)
+     LUT6:I0->O            3   0.094   0.587  bit[2].fa/Cout1 (Carry<3>)
+     LUT5:I3->O            3   0.094   0.587  bit[4].fa/Cout1 (Carry<5>)
+     LUT5:I3->O            3   0.094   0.587  bit[6].fa/Cout1 (Carry<7>)
+     LUT5:I3->O            3   0.094   0.587  bit[8].fa/Cout1 (Carry<9>)
+     LUT3:I1->O            2   0.094   0.581  bit[9].fa/Cout1 (Carry<10>)
+     LUT5:I3->O            3   0.094   0.587  bit[11].fa/Cout1 (Carry<12>)
+     LUT5:I3->O            3   0.094   0.587  bit[13].fa/Cout1 (Carry<14>)
+     LUT5:I3->O            3   0.094   0.587  bit[15].fa/Cout1 (Carry<16>)
+     LUT5:I3->O            3   0.094   0.587  bit[17].fa/Cout1 (Carry<18>)
+     LUT5:I3->O            3   0.094   0.587  bit[19].fa/Cout1 (Carry<20>)
+     LUT5:I3->O            3   0.094   0.587  bit[21].fa/Cout1 (Carry<22>)
+     LUT5:I3->O            3   0.094   0.587  bit[23].fa/Cout1 (Carry<24>)
+     LUT5:I3->O            3   0.094   0.587  bit[25].fa/Cout1 (Carry<26>)
+     LUT5:I3->O            3   0.094   0.587  bit[27].fa/Cout1 (Carry<28>)
+     LUT5:I3->O            3   0.094   0.587  bit[29].fa/Cout1 (Carry<30>)
+     LUT5:I3->O            1   0.094   0.336  bit[31].fa/Cout1 (Cout_OBUF)
+     OBUF:I->O                 2.452          Cout_OBUF (Cout)
+    ----------------------------------------
+    Total                     14.983ns (4.774ns logic, 10.209ns route)
+                                       (31.9% logic, 68.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.65 secs
+ 
+--> 
+
+
+Total memory usage is 641044 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

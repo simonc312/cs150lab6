@@ -1,0 +1,36 @@
+// UC Berkeley CS150
+// Lab 1, Spring 2012
+// Module: Adder.v
+// Desc: Parametrized structural ripple-carry adder
+
+module Adder #(
+  parameter Width = 16
+)
+(
+  input   [Width-1:0] A,
+  input   [Width-1:0] B,
+  output  [Width-1:0] Result,
+  output              Cout
+);
+
+  wire [Width:0] Carry;
+  assign Carry[0] = 1'b0;
+  assign Cout = Carry[Width];
+
+  genvar i;
+  
+  /********YOUR CODE HERE********/
+  generate
+    for(i = 0; i < Width; i = i + 1)
+    begin:bit
+      FA fa(
+        .A(A[i]),
+        .B(B[i]),
+        .Cin(Carry[i]),
+        .Sum(Result[i]),
+        .Cout(Carry[i+1])
+      );
+    end
+  endgenerate
+
+endmodule

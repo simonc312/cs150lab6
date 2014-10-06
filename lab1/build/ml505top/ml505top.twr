@@ -1,0 +1,84 @@
+--------------------------------------------------------------------------------
+Release 14.6 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.6/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 3 -s 1 -n 10 -fastpaths
+-xml ml505top.twx ml505top.ncd -o ml505top.twr ml505top.pcf
+
+Design file:              ml505top.ncd
+Physical constraint file: ml505top.pcf
+Device,package,speed:     xc5vlx110t,ff1136,-1 (PRODUCTION 1.73 2013-06-08, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock CLK_33MHZ_FPGA
+--------------+------------+------------+------------------+--------+
+              |Max Setup to|Max Hold to |                  | Clock  |
+Source        | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
+--------------+------------+------------+------------------+--------+
+GPIO_COMPSW<0>|    1.829(R)|    0.897(R)|Clock             |   0.000|
+GPIO_COMPSW<1>|    2.066(R)|    0.680(R)|Clock             |   0.000|
+GPIO_COMPSW<2>|    2.066(R)|    0.680(R)|Clock             |   0.000|
+GPIO_COMPSW<3>|    2.173(R)|    0.581(R)|Clock             |   0.000|
+GPIO_COMPSW<4>|    1.802(R)|    0.923(R)|Clock             |   0.000|
+--------------+------------+------------+------------------+--------+
+
+Clock CLK_33MHZ_FPGA to Pad
+------------+------------+------------------+--------+
+            | clk (edge) |                  | Clock  |
+Destination |   to PAD   |Internal Clock(s) | Phase  |
+------------+------------+------------------+--------+
+GPIO_LED<4> |   14.744(R)|Clock             |   0.000|
+GPIO_LED<5> |   13.556(R)|Clock             |   0.000|
+GPIO_LED<6> |   13.545(R)|Clock             |   0.000|
+GPIO_LED<7> |   13.558(R)|Clock             |   0.000|
+------------+------------+------------------+--------+
+
+Clock to Setup on destination clock CLK_33MHZ_FPGA
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_33MHZ_FPGA |    4.311|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+GPIO_DIP<0>    |GPIO_LED<0>    |    7.463|
+GPIO_DIP<1>    |GPIO_LED<0>    |   10.450|
+---------------+---------------+---------+
+
+
+Analysis completed Wed Sep 10 17:45:39 2014 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 597 MB
+
+
+

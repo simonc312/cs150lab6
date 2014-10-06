@@ -45,8 +45,10 @@
 `define FNC_LB          3'b000
 `define FNC_LH          3'b001
 `define FNC_LW          3'b010
+`define FNC_LD			3'b011
 `define FNC_LBU         3'b100
 `define FNC_LHU         3'b101
+`define FNC_LWU			3'b110
 `define FNC_SB          3'b000
 `define FNC_SH          3'b001
 `define FNC_SW          3'b010
