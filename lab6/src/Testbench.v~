@@ -60,6 +60,8 @@ module Testbench();
 
     $display("Test Successful, got output %d", 8'h21);
 
+    //TODO Test for transmitting data to reciever 
+
     $finish();
   end
 
