@@ -4,7 +4,7 @@ module UATransmit(
 
   input   [7:0] DataIn,
   input         DataInValid,
-  output        DataInReady,
+  output   reg  DataInReady,
 
   output        SOut
 );
@@ -23,46 +23,37 @@ module UATransmit(
   //--|Solution|----------------------------------------------------------------
 
  
-  reg	  [7:0]					  TXShift;
-  reg     [3:0]                   BitCounter;
   reg     [ClockCounterWidth-1:0] ClockCounter;
-  reg                             SendByte;
+  reg     [3:0]                   BitCounter;
+  reg     [9:0]                   TXShift;
+  wire                            SymbolEdge;
   wire                            TXRunning;
-
-   // Goes high at every symbol edge
-  assign  TXRunning = BitCounter != 4'd10;
+ 
   assign  SymbolEdge   = (ClockCounter == SymbolEdgeTime - 1);
-  assign  DataInReady = SendByte && !TXRunning; //high on last 10th bit
-  assign  Start = DataInValid && !TXRunning; 
-  assign  SOut = TXRunning ? 1 : TXShift[0]; //should be high on idle
-
-//Counters|----------------------------------------------------------------
-
-  // Counts cycles until a single symbol is done
+  assign  Start =  (DataInValid && DataInReady);
+  assign  TXRunning     = BitCounter != 4'd10;
+ 
+  assign SOut = (TXShift[0]);
+ 
+   
   always @ (posedge Clock) begin
     ClockCounter <= (Start || Reset || SymbolEdge) ? 0 : ClockCounter + 1;
   end
-
-  // Counts down from 10 bits for every character
+ 
   always @ (posedge Clock) begin
-    if (Reset) begin
-      BitCounter <= 10; //reset to 10 so TXRunning is false
-    end else if (Start) begin
+    if (Reset) BitCounter <= 0;      
+    else if (Start) begin
       BitCounter <= 0;
-      TXShift <= {1'b0, DataIn, 1'b1}; //shift in entire character line 
+      TXShift <= { 1'b1, DataIn, 1'b0 };
     end else if (SymbolEdge && TXRunning) begin
       BitCounter <= BitCounter + 1;
-      TXShift <= (TXShift >> 1); //pop off LSB of TXShift
+      TXShift <= { 1'b1, TXShift[9:1] }; //shift in 1's because we need stop bit (>> wont work)
     end
   end
-
-
-  //--|Extra State For Ready/Valid|---------------------------------------------
+ 
   always @ (posedge Clock) begin
-    if (Reset) SendByte <= 1'b0;
-    else if (BitCounter == 9 && SymbolEdge) SendByte <= 1'b1;
-    else if (DataInReady) SendByte <= 1'b0;
+    if (Reset) DataInReady <= 1'b1;
+    else if (TXRunning) DataInReady <= 1'b0;
+    else if ((~(TXRunning)) && SymbolEdge) DataInReady <= 1'b1;
   end
-
-
-endmodule
+ endmodule

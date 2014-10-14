@@ -15,8 +15,11 @@ module Testbench();
   reg  DataOutReady;
   wire FPGA_SERIAL_RX;
   wire FPGA_SERIAL_TX;
+  integer i;
+  localparam loops = 2;
 
   initial Clock = 1'b0;
+  
   always #(5) Clock = ~Clock;
 
   initial begin
@@ -27,10 +30,10 @@ module Testbench();
     #(10*Cycle);
     Reset = 1'b0;
     #(Cycle);
-
+    for (i = 0; i < loops; i = i +1) begin
     // Wait until DataInReady, send a character
     while (DataInReady == 1'b0) begin #(Cycle); end
-    DataIn = 8'h21; 
+    DataIn = 8'h21;
     DataInValid = 1'b1;
     #(Cycle);
     DataInValid = 1'b0;
@@ -57,9 +60,11 @@ module Testbench();
       $display("Simulation Failed: UART did not clear Valid bit after Ready");
       $finish();
     end
+    $display("Tgot output %d", 8'h21);
+
+   end
 
     $display("Test Successful, got output %d", 8'h21);
-
     $finish();
   end
 
